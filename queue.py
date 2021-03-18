@@ -34,3 +34,33 @@ class Queue:
         if self.head == self.max:
             self.head = 0
         return x
+
+def test1():
+    q = Queue(3)
+    res = q.empty()
+    if not res:
+        print "test1 NOT OK"
+        return
+    res = q.enqueue(10)
+    if not res:
+        print "test1 NOT OK"
+        return
+    res = q.enqueue(11)
+    if not res:
+        print "test1 NOT OK"
+        return
+    x = q.dequeue()
+    if x != 10:
+        print "test1 NOT OK"
+        return
+    x = q.dequeue()
+    if x != 11:
+        print "test1 NOT OK"
+        return
+    res = q.empty()
+    if not res:
+        print "test1 NOT OK"
+        return
+    print "test1 OK"
+
+test1()
