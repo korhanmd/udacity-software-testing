@@ -101,5 +101,39 @@ def test2():
         return
     print "test2 OK"
 
+def test3():
+    msg = "test3 NOT OK"
+    q = Queue(2)
+    res = q.empty()
+    if not res:
+    	print msg
+    	return
+    res = q.enqueue(10)
+    if not res:
+    	print msg
+    	return
+    res = q.enqueue(11)
+    if not res:
+    	print msg
+    	return
+    res = q.full()
+    if not res:
+    	print msg
+    	return
+    x = q.dequeue()
+    if x != 10:
+        print msg
+        return
+    x = q.dequeue()
+    if x != 11:
+        print msg
+        return
+    res = q.empty()
+    if not res:
+        print msg
+        return
+    print "test3 OK"
+
 test1()
 test2()
+test3()
