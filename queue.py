@@ -63,4 +63,41 @@ def test1():
         return
     print "test1 OK"
 
+def test2():
+    q = Queue(2)
+    res = q.empty()
+    if not res:
+    	print "test2 NOT OK"
+    	return
+    res = q.enqueue(10)
+    if not res:
+    	print "test2 NOT OK"
+    	return
+    res = q.enqueue(11)
+    if not res:
+    	print "test2 NOT OK"
+    	return
+    res = q.enqueue(12)
+    if res:
+    	print "test2 NOT OK"
+    	return
+    x = q.dequeue()
+    if x != 10:
+        print "test2 NOT OK"
+        return
+    x = q.dequeue()
+    if x != 11:
+        print "test2 NOT OK"
+        return
+    x = q.dequeue()
+    if x != None:
+        print "test2 NOT OK"
+        return
+    res = q.empty()
+    if not res:
+        print "test2 NOT OK"
+        return
+    print "test2 OK"
+
 test1()
+test2()
