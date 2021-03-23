@@ -34,3 +34,7 @@ class Queue:
         if self.head == self.max:
             self.head = 0
         return x
+
+    def checkRep(self):
+        assert self.size >= 0 and self.size <= self.max
+        return
